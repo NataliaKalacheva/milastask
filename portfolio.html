@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #000;
+      }
+      .section-title {
+        text-align: center;
+      }
+      .wrapper {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+      .works-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-right: -7px;
+      }
+      .works-content {
+        display: none;
+        margin-right: 7px;
+        height: 293px;
+        overflow: hidden;
+        margin-bottom: 7px;
+      }
+      .show {
+        display: block;
+      }
+
+      .works {
+        background: #000;
+        color: #fff;
+      }
+      #btn-group {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .works-btn {
+        font-size: 18px;
+        display: inline;
+        text-align: center;
+        border: none;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .works-btn.active {
+        color: #ffa801;
+      }
+      .works-btn:hover,
+      .works-btn:focus {
+        color: #f9c869;
+      }
+
+      .work-img {
+        overflow: hidden;
+        animation: show 0.3s ease-in-out;
+      }
+      .work-img img {
+        object-fit: fill;
+      }
+
+      @keyframes show {
+        0% {
+          opacity: 0.2;
+          transform: scale(0.2);
+        }
+        100% {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .works-content:first-child,
+      .works-content:nth-child(5n),
+      .works-content:nth-child(6n) {
+        width: 43%;
+      }
+
+      .works-content:nth-child(5n + 2) {
+        width: 32%;
+      }
+
+      .works-content:nth-child(5n + 3) {
+        width: 23%;
+      }
+
+      .works-content:nth-child(5n + 4) {
+        width: 55.66%;
+      }
+
+      @media (max-width: 1060px) {
+        .works-content {
+          margin-right: 5px;
+          margin-bottom: 5px;
+        }
+        .works-gallery {
+          margin-right: -5px;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .works-gallery {
+          width: 640px;
+          margin: 0 auto;
+        }
+        .works-content:first-child,
+        .works-content:nth-child(5n),
+        .works-content:nth-child(6n) {
+          width: 100%;
+        }
+
+        .works-content:nth-child(5n + 2),
+        .works-content:nth-child(5n + 3) {
+          width: 49.2%;
+        }
+
+        .works-content:nth-child(5n + 4) {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="works wrapper">
+      <div class="section-header">
+        <h2 class="section-title">Filter gallery</h2>
+      </div>
+      <div id="btn-group">
+        <button
+          class="works-btn active"
+          onclick="filterSelection('works-content')"
+        >
+          All
+        </button>
+        <button class="works-btn" onclick="filterSelection('graphics')">
+          Graphics
+        </button>
+        <button class="works-btn" onclick="filterSelection('web')">Web</button>
+        <button class="works-btn" onclick="filterSelection('marketing')">
+          Marketing
+        </button>
+        <button class="works-btn" onclick="filterSelection('photoshop')">
+          Photoshop
+        </button>
+        <button class="works-btn" onclick="filterSelection('illustrator')">
+          Illustrator
+        </button>
+      </div>
+
+      <div class="works-gallery">
+        <div class="works-content graphics box1">
+          <div class="work-img">
+            <img
+              src="https://images.unsplash.com/photo-1571281280912-f017f34d13d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+            />
+          </div>
+        </div>
+        <div class="works-content web box2">
+          <div class="work-img">
+            <img
+              src="https://images.unsplash.com/photo-1570520483210-db928f1b0e15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=644&q=80"
+            />
+          </div>
+        </div>
+        <div class="works-content marketing box3">
+          <div class="work-img">
+            <img
+              src="https://images.unsplash.com/photo-1572338701090-f5e263ed2dff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=659&q=80"
+            />
+          </div>
+        </div>
+        <div class="works-content photoshop box4">
+          <div class="work-img">
+            <img
+              src="https://images.unsplash.com/photo-1568981986176-7f469f028e67?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+            />
+          </div>
+        </div>
+        <div class="works-content illustrator box5">
+          <div class="work-img">
+            <img
+              src="https://images.unsplash.com/photo-1568878801942-6fc477a748db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=773&q=80"
+            />
+          </div>
+        </div>
+        <div class="works-content graphics box1">
+          <div class="work-img">
+            <img
+              src="https://images.unsplash.com/photo-1571281280912-f017f34d13d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+            />
+          </div>
+        </div>
+        <div class="works-content web box2">
+          <div class="work-img">
+            <img
+              src="https://images.unsplash.com/photo-1570520483210-db928f1b0e15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=644&q=80"
+            />
+          </div>
+        </div>
+        <div class="works-content marketing box3">
+          <div class="work-img">
+            <img
+              src="https://images.unsplash.com/photo-1572338701090-f5e263ed2dff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=659&q=80"
+            />
+          </div>
+        </div>
+        <div class="works-content photoshop box4">
+          <div class="work-img">
+            <img
+              src="https://images.unsplash.com/photo-1568981986176-7f469f028e67?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+            />
+          </div>
+        </div>
+        <div class="works-content illustrator box5">
+          <div class="work-img">
+            <img
+              src="https://images.unsplash.com/photo-1568878801942-6fc477a748db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=773&q=80"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      filterSelection("works-content");
+
+      function filterSelection(sortClass) {
+        let elements = document.getElementsByClassName("works-content");
+        cleanContainer(elements);
+        showSortedElements(sortClass);
+      }
+
+      function cleanContainer(elements) {
+        for (i = 0; i < elements.length; i++) {
+          elements[i].classList.remove("show");
+        }
+      }
+
+      function showSortedElements(sortClass) {
+        let elements = document.getElementsByClassName(sortClass);
+        for (let i = 0; i < elements.length; i++) {
+          elements[i].classList.add("show");
+        }
+      }
+
+      const btnGroup = document.getElementById("btn-group");
+      let btns = btnGroup.getElementsByClassName("works-btn");
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+          let activeBtn = document.querySelector(".works-btn.active");
+          activeBtn.classList.remove("active");
+          this.classList.add("active");
+        });
+      }
+    </script>
+  </body>
+</html>

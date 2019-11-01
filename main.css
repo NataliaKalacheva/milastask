@@ -4,11 +4,7 @@ body {
   margin: 0;
   font-family: "Rubik", sans-serif;
   font-size: 16px;
-  background: url(img/bg.jpg);
-}
-header {
-  background: #000;
-  color: #fff;
+  background-color: #fff;
 }
 a {
   display: inline-block;
@@ -27,6 +23,7 @@ p {
 }
 ul {
   padding: 0;
+  margin: 0;
 }
 
 li {
@@ -35,6 +32,8 @@ li {
 
 .wrapper {
   margin: 0 auto;
+  max-width: 1080px;
+  padding: 0 160px;
 }
 
 .btn {
@@ -57,18 +56,20 @@ li {
 }
 
 .wrapper-black {
-  width: 100vw;
-  background: linear-gradient(#000, #fff);
+  box-sizing: border-box;
+  min-height: 900px;
+  height: 100vh;
+
+  background: #000;
   background-image: url(img/bg-header.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  min-height: 900px;
-  height: 100vh;
+
   color: #fff;
+  transition: all linear 0.2s;
 }
-.wrapper {
-  max-width: 1300px;
-  padding: 0 160px;
+.white {
+  color: #dcdcdc;
 }
 
 /*navigation*/
@@ -80,8 +81,10 @@ li {
 }
 
 .nav {
+  padding-top: 30px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .nav-list {
@@ -308,7 +311,25 @@ li {
     width: 60%;
   }
 }
-
+/*general section header*/
+.section-header {
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+.section-title {
+  padding-top: 60px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 30px;
+  line-height: 1.5em;
+  text-transform: capitalize;
+  text-align: center;
+}
+.section-text {
+  margin: 0 auto;
+  width: 420px;
+  text-align: center;
+}
 /*features*/
 .features {
   position: relative;
@@ -335,10 +356,7 @@ li {
 }
 
 .features-title {
-  margin-top: 60px;
-  margin-bottom: 20px;
-  font-size: 30px;
-  line-height: 1.5em;
+  text-align: left;
 }
 
 .learn-btn {
@@ -356,3 +374,153 @@ li {
 }
 
 /*services*/
+.services {
+  position: relative;
+}
+.services::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 90px;
+  width: 87px;
+  height: 87px;
+  background-image: url(img/icons/shape.svg);
+}
+
+.services-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+.services-item {
+  width: 31.5%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0px 0px 4px 1px rgba(101, 101, 101, 0.4);
+  margin-bottom: 30px;
+}
+.services-item.black {
+  background: #000;
+  color: #fff;
+}
+
+/*works*/
+.works-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: -4px;
+  padding-bottom: 120px;
+}
+.works-content {
+  position: relative;
+  display: none;
+  margin-right: 4px;
+  height: 293px;
+  overflow: hidden;
+  margin-bottom: 4px;
+  background: #ebebeb;
+  animation: show 0.3s ease-in-out;
+  background: rgba(0, 0, 0, 0.4);
+
+  box-sizing: border-box;
+}
+
+.works-content img:hover {
+  opacity: 0.5;
+}
+.works-content:hover {
+  background-image: url(img/icons/watch.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  box-shadow: inset 0 0 0 10px black, inset 0 0 0 13px white;
+}
+.show {
+  display: block;
+}
+
+.works {
+  background: #000;
+  color: #fff;
+}
+#btn-group {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.works-btn {
+  font-size: 18px;
+  display: inline;
+  text-align: center;
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.works-btn.active {
+  color: #ffa801;
+}
+.works-btn:hover,
+.works-btn:focus {
+  color: #f9c869;
+}
+
+.work-img {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  /* animation: show 0.3s ease-in-out; */
+}
+.work-img img {
+  display: block;
+  margin: 0 auto;
+  object-fit: fill;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.2);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.works-content:first-child,
+.works-content:nth-child(5n),
+.works-content:nth-child(6n) {
+  width: 43%;
+}
+
+.works-content:nth-child(5n + 2) {
+  width: 32%;
+}
+
+.works-content:nth-child(5n + 3) {
+  width: 23.5%;
+}
+
+.works-content:nth-child(5n + 4) {
+  width: 56%;
+}
+
+@media (max-width: 1110px) {
+  .works-content {
+    margin-right: 2px;
+    margin-bottom: 2px;
+  }
+  .works-gallery {
+    margin-right: -2px;
+  }
+}
+
+@media (max-width: 950px) {
+  .works-content {
+    width: 49% !important;
+  }
+}

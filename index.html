@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" type="text/css" href="main.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Parisienne|Rubik:300,400,500&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
   </head>
   <body>
     <div class="wrapper-black">
@@ -31,7 +32,7 @@
           <section class="main">
             <div class="main-item">
               <h1>I am Jack Barboza</h1>
-              <p>
+              <p class="">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim
@@ -40,7 +41,13 @@
               <button class="cv-btn btn">Download</button>
             </div>
             <div class="main-photo">
-              <img class="main" src="img/me.jpg" alt="author photo" />
+              <img
+                class="main"
+                src="img/me.jpg"
+                alt="author photo"
+                width="380"
+                height="576"
+              />
             </div>
           </section>
           <section class="social">
@@ -129,7 +136,7 @@
           </ul>
         </section>
         <section class="features">
-          <h2 class="features-title">
+          <h2 class="section-title features-title">
             About Me : Why I am different then other Freelancer.
           </h2>
           <p class="features-text">
@@ -146,12 +153,141 @@
       </div>
     </section>
 
-    <section class="services">
-      <h2>Services I provide</h2>
-      <p>
-        Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident, sunt in culpa qui officia deseruntm.
-      </p>
+    <section class="services wrapper">
+      <div class="section-header">
+        <h2 class="section-title">Services I provide</h2>
+        <p class="section-text">
+          Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, sunt in culpa qui officia deseruntm.
+        </p>
+      </div>
+      <ul class="services-list">
+        <li class="services-item">
+          <img src="img/icons/check.svg" alt="" />
+          <h3 class="services-title">Photography</h3>
+          <p>
+            Lipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </li>
+        <li class="services-item">
+          <img src="img/icons/check.svg" alt="" />
+          <h3>Branding</h3>
+          <p class="services-title">
+            Lipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </li>
+        <li class="services-item">
+          <img src="img/icons/check.svg" alt="" />
+          <h3 class="services-title">Logo Design</h3>
+          <p>
+            Lipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </li>
+        <li class="services-item">
+          <img src="img/icons/check.svg" alt="" />
+          <h3 class="services-title">Web design</h3>
+          <p>
+            Lipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </li>
+        <li class="services-item black">
+          <img src="img/icons/check-black.svg" alt="" />
+          <h3 class="services-title">Web Development</h3>
+          <p class="white">
+            Lipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </li>
+        <li class="services-item">
+          <img src="img/icons/check.svg" alt="" />
+          <h3 class="services-title">Content</h3>
+          <p>
+            Lipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </li>
+      </ul>
     </section>
+    <section class="works wrapper">
+      <div class="section-header">
+        <h2 class="section-title">My portfolio</h2>
+        <p class="section-text white">
+          Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, sunt in culpa qui officia deseruntm.
+        </p>
+      </div>
+      <div id="btn-group">
+        <button class="works-btn active" onclick="filterSelection('all')">
+          All
+        </button>
+        <button class="works-btn" onclick="filterSelection('graphics')">
+          Graphics
+        </button>
+        <button class="works-btn" onclick="filterSelection('web')">Web</button>
+        <button class="works-btn" onclick="filterSelection('marketing')">
+          Marketing
+        </button>
+        <button class="works-btn" onclick="filterSelection('photoshop')">
+          Photoshop
+        </button>
+        <button class="works-btn" onclick="filterSelection('illustrator')">
+          Illustrator
+        </button>
+      </div>
+
+      <div class="works-gallery">
+        <div class="works-content graphics">
+          <div class="work-img">
+            <a data-fancybox="gallery" href="img/portfolio/pic-1.jpg">
+              <img src="img/portfolio/pic-1.jpg" />
+            </a>
+          </div>
+        </div>
+        <div class="works-content web">
+          <div class="work-img">
+            <a data-fancybox="gallery" href="img/portfolio/pic-2.jpg">
+              <img src="img/portfolio/pic-2.jpg" />
+            </a>
+          </div>
+        </div>
+        <div class="works-content marketing">
+          <div class="work-img">
+            <a data-fancybox="gallery" href="img/portfolio/pic-3.jpg">
+              <img src="img/portfolio/pic-3.jpg" />
+            </a>
+          </div>
+        </div>
+        <div class="works-content photoshop">
+          <div class="work-img">
+            <a data-fancybox="gallery" href="img/portfolio/pic-4.jpg">
+              <img src="img/portfolio/pic-4.jpg" />
+            </a>
+          </div>
+        </div>
+        <div class="works-content illustrator">
+          <div class="work-img">
+            <a data-fancybox="gallery" href="img/portfolio/pic-5.jpg">
+              <img src="img/portfolio/pic-5.jpg" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Vendor scripts-->
+    <script
+      type="text/javascript"
+      src="libs/jquery/jquery-3.4.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="libs/fancybox/jquery.fancybox.min.js"
+    ></script>
+    <!--User scripts-->
+    <script src="app.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
