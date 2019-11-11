@@ -68,8 +68,6 @@ li {
 }
 .wrapper-black {
   box-sizing: border-box;
-  min-height: 900px;
-  height: 100vh;
 
   background: #000;
   background-image: url(img/bg-header.jpg);
@@ -116,6 +114,25 @@ li {
   text-decoration: none;
 }
 
+.nav-burger {
+  position: relative;
+  width: 30px;
+  height: 3px;
+  background: #fff;
+}
+.nav-burger::before,
+.nav-burger::after {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 3px;
+}
+.nav-burger::before {
+  top: -5px;
+}
+.nav-burger::after {
+  bottom: -5px;
+}
 /*main*/
 .main-article {
   position: relative;
@@ -123,11 +140,12 @@ li {
 
 .main {
   display: flex;
+  align-items: center;
+  min-height: 100vh;
 }
 .main-item {
   width: 49.9999%;
-  margin-top: 150px;
-  margin-right: 100px;
+  margin: 100px 100px 50px 0;
 }
 
 .main-item h1 {
@@ -979,3 +997,96 @@ li {
 .footer p {
   color: #dcdcdc;
 }
+
+@media (max-width: 990px) {
+  /*general*/
+  body {
+    font-size: 14px;
+  }
+
+  /*main*/
+  .main-item {
+    width: 49.9999%;
+    margin: 50px 50px 50px 0;
+  }
+
+  .main-item h1 {
+    margin-bottom: 30px;
+    font-size: 35px;
+    line-height: 1em;
+  }
+
+  .main-item p {
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 770px) {
+  /*main*/
+  .main-item h1 {
+    margin-bottom: 30px;
+    font-size: 23px;
+  }
+  .main-item p {
+    text-align: left;
+  }
+  .cv-btn {
+    margin: 0;
+  }
+  /*nav*/
+  .nav-list {
+    display: none;
+  }
+  .nav-burger {
+    display: block;
+  }
+}
+@media (max-width: 575px) {
+  /*main*/
+  .main {
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+  .main-item {
+    width: 100%;
+  }
+  .main-photo {
+    width: 100%;
+  }
+}
+@media (max-width: 320px) {
+}
+/* 
+
+
+.main {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+.main-item {
+  width: 49.9999%;
+  margin: 100px 100px 50px 0;
+}
+
+.main-item h1 {
+  margin-bottom: 40px;
+  font-size: 50px;
+  line-height: 60px;
+  text-align: center;
+  text-transform: initial;
+}
+
+.main-item p {
+  margin-bottom: 40px;
+  color: #fff;
+  line-height: 28px;
+  text-align: center;
+}
+
+.cv-btn {
+  margin: 0 auto;
+  background: #fff;
+  color: #000;
+  animation: appearance 0.3s linear;
+} */
