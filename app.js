@@ -85,10 +85,10 @@ function showSlides(n) {
 
 /*logo slider*/
 
-let slider = document.getElementById("brands-slider");
-let sliderItems = document.getElementById("brands-items");
-let prev = document.getElementById("prev");
-let next = document.getElementById("next");
+var slider = document.getElementById("brands-slider");
+var sliderItems = document.getElementById("brands-items");
+var prev = document.getElementById("prev");
+var next = document.getElementById("next");
 
 slide(slider, sliderItems, prev, next);
 
@@ -211,3 +211,13 @@ function slide(wrapper, items, prev, next) {
     allowShift = true;
   }
 }
+
+/*burger menu*/
+
+var burgerBtn = document.querySelector(".nav-burger");
+var navigation = document.querySelector(".nav-list");
+
+burgerBtn.addEventListener("click", function() {
+  navigation.classList.toggle("active");
+  burgerBtn.classList.toggle("active");
+});

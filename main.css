@@ -90,6 +90,7 @@ li {
 }
 
 .nav {
+  position: relative;
   padding-top: 30px;
   display: flex;
   justify-content: space-between;
@@ -98,6 +99,17 @@ li {
 
 .nav-list {
   display: flex;
+}
+.nav-list.active {
+  position: absolute;
+  top: 100px;
+  right: 10px;
+  flex-direction: column;
+  z-index: 1;
+
+  padding: 10px;
+
+  background: #000;
 }
 .nav-item {
   margin-right: 22px;
@@ -115,23 +127,61 @@ li {
 }
 
 .nav-burger {
+  display: none;
+
   position: relative;
   width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-burger-item {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 0;
+  width: 100%;
   height: 3px;
+  margin-top: -1.5px;
+
   background: #fff;
 }
 .nav-burger::before,
 .nav-burger::after {
   position: absolute;
+  left: 0;
   content: "";
-  width: 30px;
+  display: block;
+  width: 100%;
   height: 3px;
+  background: #fff;
+
+  transition: all 0.3s linear;
 }
 .nav-burger::before {
-  top: -5px;
+  top: 0;
 }
 .nav-burger::after {
-  bottom: -5px;
+  bottom: 0;
+}
+.nav-burger.active {
+  background: transparent;
+  width: 30px;
+  height: 30px;
+}
+.nav-burger.active .nav-burger-item {
+  display: none;
+}
+.nav-burger.active::before {
+  top: 50%;
+
+  transform: rotate(45deg);
+}
+.nav-burger.active::after {
+  top: 50%;
+  transform: rotate(-45deg);
 }
 /*main*/
 .main-article {
@@ -750,7 +800,7 @@ li {
   cursor: pointer;
 }
 
-.active,
+.dot.active,
 .dot:hover {
   opacity: 0.8;
 }
@@ -1036,6 +1086,10 @@ li {
   /*nav*/
   .nav-list {
     display: none;
+  }
+  .nav-list.active {
+    display: block;
+    opacity: 1;
   }
   .nav-burger {
     display: block;
