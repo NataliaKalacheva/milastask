@@ -40,6 +40,7 @@ li {
   margin: 0 auto;
   max-width: 1080px;
   padding: 0 160px;
+  overflow: hidden;
 }
 
 .btn {
@@ -244,6 +245,7 @@ li {
 
 .main-photo img {
   width: 100%;
+  min-height: 300px;
 }
 .social {
   position: absolute;
@@ -1138,6 +1140,9 @@ li {
   .section-title {
     font-size: 22px;
   }
+  .wrapper {
+    padding: 0 40px;
+  }
   /*main*/
   .main-item h1 {
     margin-bottom: 30px;
@@ -1238,6 +1243,9 @@ li {
 }
 
 @media (max-width: 575px) {
+  .wrapper {
+    padding: 0 20px;
+  }
   /*main*/
   .main {
     flex-direction: column-reverse;
@@ -1260,10 +1268,35 @@ li {
   .main-photo {
     width: 100%;
   }
+
   /*services*/
   .services-item {
     width: 100%;
   }
+  /*slider*/
+  .next {
+    right: -5px;
+  }
+  .prev {
+    left: -5px;
+  }
 }
 @media (max-width: 320px) {
+  /*works gallery*/
+  .works-content {
+    width: 98% !important;
+  }
+  /*blog*/
+  .small-items .blog-item {
+    flex-wrap: wrap;
+  }
+  .small-items .blog-img {
+    width: 100%;
+  }
+
+  /*contact me*/
+  #contact-name,
+  #contact-mail {
+    width: 100%;
+  }
 }
