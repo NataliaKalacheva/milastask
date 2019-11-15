@@ -14,23 +14,40 @@
   </head>
   <body>
     <div class="wrapper-black">
+      <!-- <div class="wrapper"> -->
+      <header id="home" class="wrapper">
+        <nav class="nav fade">
+          <span class="nav-logo">Milastask</span>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a class="nav-link active" data-scroll="home" href="#home"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-scroll="features" href="#features"
+                >Features</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-scroll="about" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-scroll="services" href="">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-scroll="projects" href="">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-scroll="blog" href="">Blog</a>
+            </li>
+          </ul>
+          <button class="nav-burger">
+            <div class="nav-burger-item"></div>
+          </button>
+        </nav>
+      </header>
       <div class="wrapper">
-        <header>
-          <nav class="nav fade">
-            <span class="nav-logo">Milastask</span>
-            <ul class="nav-list">
-              <li class="nav-item"><a href="">Home</a></li>
-              <li class="nav-item"><a href="">Features</a></li>
-              <li class="nav-item"><a href="">About</a></li>
-              <li class="nav-item"><a href="">Services</a></li>
-              <li class="nav-item"><a href="">Projects</a></li>
-              <li class="nav-item"><a href="">Blog</a></li>
-            </ul>
-            <button class="nav-burger">
-              <div class="nav-burger-item"></div>
-            </button>
-          </nav>
-        </header>
         <article class="main-article">
           <section class="main">
             <div class="main-item fade">
@@ -79,7 +96,7 @@
               </li>
             </ul>
           </section>
-          <section class="important">
+          <section id="features" class="important">
             <ul class="important-list">
               <li class="important-item">
                 <h2 class="imp-title">Frontend Development</h2>
@@ -109,7 +126,7 @@
       </div>
     </div>
 
-    <section class="about">
+    <section id="about" class="about">
       <div class="wrapper about-wrapper">
         <section class="skills">
           <h2>My skills for work</h2>
@@ -150,7 +167,7 @@
       </div>
     </section>
 
-    <section class="services wrapper">
+    <section id="services" class="services wrapper">
       <div class="section-header">
         <h2 class="section-title">Services I provide</h2>
         <p class="section-text">
@@ -209,7 +226,7 @@
         </li>
       </ul>
     </section>
-    <section class="works wrapper">
+    <section id="projects" class="works wrapper">
       <div class="section-header">
         <h2 class="section-title">My portfolio</h2>
         <p class="section-text white">
@@ -253,7 +270,7 @@
         </div>
         <div class="works-content marketing">
           <div class="work-img">
-            <a data-fancybox="gallery" href="img/portfolio/pic-3.jpg">
+            <a data-fancybox="gallery" href="img/portfolio/pic-3.jpeg">
               <img src="img/portfolio/pic-3.jpeg" />
             </a>
           </div>
@@ -274,7 +291,7 @@
         </div>
       </div>
     </section>
-    <section class="blog wrapper">
+    <section id="blog" class="blog wrapper">
       <div class="section-header">
         <h2 class="section-title">My news and Projects</h2>
         <p class="section-text">

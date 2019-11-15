@@ -1,3 +1,46 @@
+/*fixed menu*/
+
+window.addEventListener("scroll", showMenu);
+function showMenu() {
+  var menu = document.getElementById("home");
+  var heightWrapper = document.querySelector(".wrapper-black").clientHeight;
+
+  if (window.pageYOffset > heightWrapper) {
+    menu.classList.add("fixed");
+  } else {
+    menu.classList.remove("fixed");
+  }
+}
+
+/*nav-link smooth scroll*/
+
+var links = document.body.querySelectorAll("[data-scroll]");
+
+links.forEach(link => {
+  link.addEventListener("click", followLink);
+});
+
+function followLink(e) {
+  e.preventDefault();
+  var elementId = this.dataset.scroll;
+  var elementOffset = document.getElementById(elementId).offsetTop;
+
+  document.querySelector(".nav-link.active").classList.remove("active");
+  this.classList.add("active");
+
+  if (window.pageYOffset > elementOffset) {
+    window.scrollBy({
+      top: -window.pageYOffset + elementOffset,
+      behavior: "smooth"
+    });
+  } else {
+    window.scrollBy({
+      top: elementOffset - window.pageYOffset,
+      behavior: "smooth"
+    });
+  }
+}
+
 /*gallery filter*/
 filterSelection("all"); // Execute the function and show all columns
 

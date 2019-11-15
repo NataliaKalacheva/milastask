@@ -40,7 +40,6 @@ li {
   margin: 0 auto;
   max-width: 1080px;
   padding: 0 160px;
-  /* overflow: hidden; */
 }
 
 .btn {
@@ -92,6 +91,20 @@ li {
 
 /*navigation*/
 
+#home.fixed {
+  position: fixed;
+  padding-top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  background: #000;
+  border-radius: 0 0 60px 60px;
+}
+#home.fixed nav {
+  padding-top: 0;
+}
+
 .nav-logo {
   font-family: "Parisienne", cursive;
   font-size: 30px;
@@ -124,13 +137,14 @@ li {
   margin-right: 22px;
 }
 
-.nav-item a {
+.nav-link {
   display: inline-block;
   padding: 10px 0;
 }
 
-.nav-item a:hover,
-.nav-item a:focus {
+.nav-link.active,
+.nav-link:hover,
+.nav-link:focus {
   border-top: 1px dashed #fff;
   padding-top: 9px;
   text-decoration: none;
@@ -1126,14 +1140,7 @@ li {
   .reviews .section-header {
     width: 39.333%;
   }
-  /* .reviews .section-title {
-    padding-top: 0;
-    color: #fff;
-    text-align: left;
-  }
-  .reviews .section-text {
-    text-align: left;
-  } */
+
   /*reviews slider*/
   .slide {
     padding: 20px 20px;
@@ -1231,6 +1238,8 @@ li {
   /*reviews*/
   .reviews {
     flex-wrap: wrap;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
   .reviews-slider {
     width: 100%;
@@ -1297,6 +1306,11 @@ li {
   }
   .prev {
     left: -5px;
+  }
+  /*reviews*/
+  .reviews {
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 }
 @media (max-width: 400px) {
