@@ -1,9 +1,10 @@
 /*fixed menu*/
 
 window.addEventListener("scroll", showMenu);
+
 function showMenu() {
-  var menu = document.getElementById("home");
-  var heightWrapper = document.querySelector(".wrapper-black").clientHeight;
+  let menu = document.getElementById("home");
+  let heightWrapper = document.querySelector(".wrapper-black").clientHeight;
 
   if (window.pageYOffset > heightWrapper) {
     menu.classList.add("fixed");
@@ -12,9 +13,92 @@ function showMenu() {
   }
 }
 
+/*animation*/
+
+animation();
+
+function animation() {
+  let isScrolling = false;
+  window.addEventListener("scroll", checkScroll, false);
+
+  function checkScroll(e) {
+    if (isScrolling == false) {
+      window.requestAnimationFrame(function() {
+        scrollAnimation(e);
+        isScrolling = false;
+      });
+    }
+    isScrolling = true;
+  }
+
+  document.addEventListener("DOMContentLoaded", scrollAnimation, false);
+
+  function scrollAnimation(e) {
+    let featureItems = Array.from(document.querySelectorAll(".important-item"));
+    let skillsBox = document.querySelector(".skills");
+    let services = Array.from(document.querySelectorAll(".services-item"));
+    let skills = Array.from(document.querySelectorAll(".skill"));
+    let worksBox = document.querySelector(".works-gallery");
+    let works = Array.from(document.querySelectorAll(".works-content"));
+    let blogBig = document.querySelector(".blog-list .big-item");
+    let blogSmall = Array.from(
+      document.querySelectorAll(".blog-list .small__item")
+    );
+    let review = document.querySelector(".reviews-slider");
+    let form = document.querySelector(".contact-form");
+
+    services.forEach(item => {
+      initAnimation(isPartiallyVisible, item, "flip-in-x");
+    });
+
+    initAnimation(isFullyVisible, skillsBox, "slide-to-right");
+    initAnimation(isFullyVisible, form, "flip-in-x");
+    initAnimation(isPartiallyVisible, review, "slide-to-right");
+
+    skills.forEach(item => {
+      initAnimation(isFullyVisible, item, "active");
+    });
+
+    featureItems.forEach(item => {
+      initAnimation(isFullyVisible, item, "flip-in-x");
+    });
+
+    initAnimation(isPartiallyVisible, worksBox, "scale");
+    initAnimation(isPartiallyVisible, blogBig, "slide-to-right");
+
+    blogSmall.forEach(item => {
+      initAnimation(isPartiallyVisible, item, "slide-to-left");
+    });
+  }
+
+  function initAnimation(visibility, item, animationName) {
+    if (visibility(item) && !item.classList.contains(animationName)) {
+      item.classList.add(animationName);
+    }
+  }
+  function isPartiallyVisible(el) {
+    let elementBoundary = el.getBoundingClientRect();
+
+    let top = elementBoundary.top;
+    let bottom = elementBoundary.bottom;
+    let height = elementBoundary.height;
+
+    return top + height >= 0 && height + window.innerHeight >= bottom;
+  }
+
+  function isFullyVisible(el) {
+    let elementBoundary = el.getBoundingClientRect();
+
+    let top = elementBoundary.top;
+    let bottom = elementBoundary.bottom;
+
+    return top >= 0 && bottom <= window.innerHeight;
+  }
+}
+
 /*nav-link smooth scroll*/
 
-var links = document.body.querySelectorAll("[data-scroll]");
+let links = document.body.querySelectorAll("[data-scroll]");
 
 links.forEach(link => {
   link.addEventListener("click", followLink);
@@ -22,8 +106,8 @@ links.forEach(link => {
 
 function followLink(e) {
   e.preventDefault();
-  var elementId = this.dataset.scroll;
-  var elementOffset = document.getElementById(elementId).offsetTop;
+  let elementId = this.dataset.scroll;
+  let elementOffset = document.getElementById(elementId).offsetTop;
 
   document.querySelector(".nav-link.active").classList.remove("active");
   this.classList.add("active");
@@ -45,7 +129,7 @@ function followLink(e) {
 filterSelection("all"); // Execute the function and show all columns
 
 function filterSelection(c) {
-  var x, i;
+  let x, i;
   x = document.getElementsByClassName("works-content");
   if (c == "all") c = "";
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
@@ -57,7 +141,7 @@ function filterSelection(c) {
 
 // Show filtered elements
 function w3AddClass(element, name) {
-  var i, arr1, arr2;
+  let i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
   for (i = 0; i < arr2.length; i++) {
@@ -69,7 +153,7 @@ function w3AddClass(element, name) {
 
 // Hide elements that are not selected
 function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
+  let i, arr1, arr2;
   arr1 = element.className.split(" "); //arr with class names
   arr2 = name.split(" "); //ar with names
   for (i = 0; i < arr2.length; i++) {
@@ -81,11 +165,11 @@ function w3RemoveClass(element, name) {
 }
 
 // Add active class to the current button (highlight it)
-var btnContainer = document.getElementById("btn-group");
-var btns = btnContainer.getElementsByClassName("works-btn");
-for (var i = 0; i < btns.length; i++) {
+let btnContainer = document.getElementById("btn-group");
+let btns = btnContainer.getElementsByClassName("works-btn");
+for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
+    let current = document.getElementsByClassName("active");
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
   });
@@ -128,15 +212,15 @@ function showSlides(n) {
 
 /*logo slider*/
 
-var slider = document.getElementById("brands-slider");
-var sliderItems = document.getElementById("brands-items");
-var prev = document.getElementById("prev");
-var next = document.getElementById("next");
+let slider = document.getElementById("brands-slider");
+let sliderItems = document.getElementById("brands-items");
+let prev = document.getElementById("prev");
+let next = document.getElementById("next");
 
 slide(slider, sliderItems, prev, next);
 
 function slide(wrapper, items, prev, next) {
-  var posX1 = 0,
+  let posX1 = 0,
     posX2 = 0,
     posInitial,
     posFinal,
@@ -257,8 +341,8 @@ function slide(wrapper, items, prev, next) {
 
 /*burger menu*/
 
-var burgerBtn = document.querySelector(".nav-burger");
-var navigation = document.querySelector(".nav-list");
+let burgerBtn = document.querySelector(".nav-burger");
+let navigation = document.querySelector(".nav-list");
 
 burgerBtn.addEventListener("click", function() {
   navigation.classList.toggle("active");
